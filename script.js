@@ -31,6 +31,14 @@ generate.addEventListener("click", function () {
         cellule.innerHTML = numbers[i]
         cellule.addEventListener("click", function () {
             this.className = "cell"
+            var firstpick = ""
+            firstpick = cellule.value
+            var secondpick = ""
+            if ( firstpick == secondpick) {
+                console.log("plop");
+                
+            }
+        
         })
     }
 })
