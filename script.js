@@ -4,6 +4,8 @@ var gameDiv = document.createElement("div");
 gameDiv.setAttribute("id", "game");
 document.body.appendChild(gameDiv);
 
+var click1 = null;
+var click2 = null;
 
 generate.addEventListener("click", function () {
 
@@ -31,14 +33,33 @@ generate.addEventListener("click", function () {
         cellule.innerHTML = numbers[i]
         cellule.addEventListener("click", function () {
             this.className = "cell"
-            var firstpick = ""
-            firstpick = cellule.value
-            var secondpick = ""
-            if ( firstpick == secondpick) {
+            if (click1 == null){
+                click1 = this
                 console.log("plop");
+            }
+            else {
+                click2 = this
+                console.log("toto");
+                if (click2.innerHTML == click1.innerHTML) {
+                    click1.className = "cell"
+                    click2.className = "cell"
+
+                    click2 = null
+                    click1 = null
+                }
+                else {
+                    setTimeout(function()  {
+                        click1.className = "cell hidden"
+                        click2.className = "cell hidden"
+
+                        click2 = null
+                        click1 = null
+                    }, 1000);
+                }
+
                 
             }
-        
+            
         })
     }
 })
