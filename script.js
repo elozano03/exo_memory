@@ -8,7 +8,7 @@ document.body.appendChild(gameDiv);
 generate.addEventListener("click", function () {
 
     gameDiv.innerHTML = "";
-    
+
     var saisis = document.getElementById("saisis")
     var nb = saisis.value;
 
