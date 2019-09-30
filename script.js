@@ -1,21 +1,25 @@
+var generate = document.getElementsByTagName("button")[0];
+
+generate.addEventListener("click" , function(){
+    var saisis = document.getElementById("saisis")
+    var nb = saisis.value ;
+    
 var gameDiv = document.createElement("div");
 gameDiv.setAttribute("id" , "game");
 document.body.appendChild(gameDiv);
 
 var numbers = [];
-var nb = 16;
+
 for (let i = 0; i < nb/2 ; i++) {
     numbers.push(i+1);
     numbers.push(i+1);
 }
-// var numbers = [1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8]
 for (i = 0; i < numbers.length; i++) {
     var random_index = Math.floor(Math.random() * (i + 1));
     var temp = numbers[i];
     numbers[i] = numbers[random_index];
     numbers[random_index] = temp;
 }
-
 for (let i = 0; i < numbers.length; i++) {
     var cellule = document.createElement("div");
     cellule.className = "cell hidden"
@@ -25,4 +29,4 @@ for (let i = 0; i < numbers.length; i++) {
         this.className = "cell"
     })
 }
-
+})

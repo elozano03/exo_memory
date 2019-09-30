@@ -10,11 +10,14 @@ p {
 }
 
 .cell {
+    padding-top: 3rem;
+    text-align: center;
     margin: 0.5rem;
     display: inline-block;
     color: black;
     background-color: beige;
-    padding: 2rem 5rem;;
+    width: 140px;
+    height: 70px;
 }
 .hidden {
     background-color: black
