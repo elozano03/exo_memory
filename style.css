@@ -1,0 +1,21 @@
+body {
+    width: 50%;
+    margin: auto;
+}
+header{
+    display: inline-block;
+}
+p {
+    display: inline-block;
+}
+
+.cell {
+    margin: 0.5rem;
+    display: inline-block;
+    color: black;
+    background-color: beige;
+    padding: 2rem 5rem;;
+}
+.hidden {
+    background-color: black
+}
