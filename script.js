@@ -7,13 +7,16 @@ document.body.appendChild(gameDiv);
 var click1 = null;
 var click2 = null;
 
+var compteur = document.getElementsByTagName("span")[0]
+var cpt = 0
+
 generate.addEventListener("click", function () {
 
     gameDiv.innerHTML = "";
-
     var saisis = document.getElementById("saisis")
     var nb = saisis.value;
-
+    cpt = 0
+    compteur.innerHTML = cpt
     var numbers = [];
 
     for (let i = 0; i < nb / 2; i++) {
@@ -31,18 +34,19 @@ generate.addEventListener("click", function () {
         cellule.className = "cell hidden"
         gameDiv.appendChild(cellule)
         cellule.innerHTML = numbers[i]
+
         cellule.addEventListener("click", function () {
             this.className = "cell"
             if (click1 == null){
                 click1 = this
-                console.log("plop");
             }
             else {
                 click2 = this
-                console.log("toto");
                 if (click2.innerHTML == click1.innerHTML) {
                     click1.className = "cell"
                     click2.className = "cell"
+                    cpt = cpt +1
+                    compteur.innerHTML = cpt
 
                     click2 = null
                     click1 = null
@@ -54,12 +58,9 @@ generate.addEventListener("click", function () {
 
                         click2 = null
                         click1 = null
-                    }, 1000);
+                    }, 500);
                 }
-
-                
-            }
-            
+            }   
         })
     }
 })
