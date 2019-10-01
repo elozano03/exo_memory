@@ -1,3 +1,6 @@
+// --------------- Intégration du jeu / Valeurs de comparaison / Compteur --------------------------------------
+
+
 var generate = document.getElementsByTagName("button")[0];
 
 var gameDiv = document.createElement("div");
@@ -9,6 +12,8 @@ var click2 = null;
 
 var compteur = document.getElementsByTagName("span")[0]
 var cpt = 0
+
+// ----------------- Génération des cartes --------------------------------------
 
 generate.addEventListener("click", function () {
 
@@ -34,6 +39,8 @@ generate.addEventListener("click", function () {
         cellule.className = "cell hidden"
         gameDiv.appendChild(cellule)
         cellule.innerHTML = numbers[i]
+
+// ----------------- Comparaison des cartes ----------------------------------
 
         cellule.addEventListener("click", function () {
             this.className = "cell"
